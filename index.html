@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+  <title>NEON DRIFT: DeltaHacks Edition</title>
+  <meta name="description" content="A fast, juicy, browser game built for DeltaHacks McMaster. Dodge, drift, and collect energy." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title">
+          <h1>NEON DRIFT</h1>
+          <p class="subtitle">DeltaHacks McMaster • Arcade Run</p>
+        </div>
+      </div>
+
+      <div class="hud">
+        <div class="pill"><span class="k">Score</span><span id="score" class="v">0</span></div>
+        <div class="pill"><span class="k">Best</span><span id="best" class="v">0</span></div>
+        <div class="pill"><span class="k">Chain</span><span id="chain" class="v">x1</span></div>
+      </div>
+    </header>
+
+    <main class="stage">
+      <canvas id="c" width="1280" height="720" aria-label="Game canvas"></canvas>
+
+      <div id="overlay" class="overlay">
+        <div class="card">
+          <h2>NEON DRIFT</h2>
+          <p class="muted">Dodge hazards, collect <b>energy</b>, and keep your <b>combo chain</b> alive.</p>
+
+          <div class="grid2">
+            <div class="box">
+              <h3>Controls</h3>
+              <ul>
+                <li><kbd>←</kbd><kbd>→</kbd> or <kbd>A</kbd><kbd>D</kbd> to drift</li>
+                <li><kbd>Space</kbd> to boost (uses energy)</li>
+                <li><kbd>P</kbd> pause • <kbd>R</kbd> restart</li>
+              </ul>
+              <p class="muted tiny">Mobile: drag left/right • tap with 2 fingers to boost</p>
+            </div>
+            <div class="box">
+              <h3>How scoring works</h3>
+              <ul>
+                <li>Energy orbs add score and fill your boost meter</li>
+                <li>A clean streak increases <b>Chain</b> multiplier</li>
+                <li>Getting hit resets the chain and drains some score</li>
+              </ul>
+              <p class="muted tiny">Tip: short boosts help you thread tight gaps.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <button id="btnPlay" class="btn primary">Play</button>
+            <button id="btnHow" class="btn">How to play</button>
+            <button id="btnMute" class="btn" aria-pressed="false">Sound: On</button>
+          </div>
+
+          <div id="how" class="how hidden">
+            <h3>Goal</h3>
+            <p>Survive as long as possible. The track speeds up, hazards get trickier, and your combo chain becomes everything.</p>
+            <h3>Powerups</h3>
+            <ul>
+              <li><b>Shield</b> (cyan): blocks one hit</li>
+              <li><b>Magnet</b> (purple): pulls nearby orbs for a short time</li>
+              <li><b>Slow-mo</b> (green): slows hazards briefly (score still counts!)</li>
+            </ul>
+            <h3>Accessibility</h3>
+            <p class="muted">Press <kbd>H</kbd> anytime to toggle the help panel, and <kbd>M</kbd> to mute.</p>
+          </div>
+
+          <p class="footer muted tiny">Made for DeltaHacks • Works offline after first load • No external libraries</p>
+        </div>
+      </div>
+
+      <div id="toast" class="toast hidden"></div>
+
+      <div id="help" class="help hidden" aria-live="polite">
+        <div class="helpCard">
+          <div class="helpTitle">Quick Help</div>
+          <div class="helpRow"><span>Move</span><span><kbd>←</kbd><kbd>→</kbd> / <kbd>A</kbd><kbd>D</kbd> / Drag</span></div>
+          <div class="helpRow"><span>Boost</span><span><kbd>Space</kbd> / 2-finger tap</span></div>
+          <div class="helpRow"><span>Pause</span><span><kbd>P</kbd></span></div>
+          <div class="helpRow"><span>Restart</span><span><kbd>R</kbd></span></div>
+          <div class="helpRow"><span>Mute</span><span><kbd>M</kbd></span></div>
+          <div class="helpRow"><span>Help</span><span><kbd>H</kbd></span></div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="bottombar">
+      <div class="left">
+        <span class="dot" id="statusDot" aria-hidden="true"></span>
+        <span id="statusText">Ready</span>
+      </div>
+      <div class="right">
+        <span class="muted tiny">v1.0 • Canvas • 60 FPS target</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
