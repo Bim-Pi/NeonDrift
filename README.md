@@ -1,4 +1,5 @@
-# NEON DRIFT — DeltaHacks McMaster Edition
+# NEON DRIFT — DeltaHacks 
+
 
 A fast, juicy, arcade runner built with **pure HTML/CSS/JS (Canvas)** — no libraries, no assets.
 
