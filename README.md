@@ -2,7 +2,7 @@
 
 
 A fast, juicy, arcade runner built with **pure HTML/CSS/JS (Canvas)** — no libraries, no assets.
-This project was created in collaboration with Krishna
+This project was created in collaboration with MangoKrish
 
 ## How to play
 - **Move:** Arrow keys (←/→) or **A/D**
