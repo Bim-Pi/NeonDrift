@@ -3,6 +3,7 @@
 
 - A fast, juicy, arcade runner built with **pure HTML/CSS/JS (Canvas)** — no libraries, no assets.
 - This project was created in collaboration with MangoKrish
+- Follow him on GitHub: github.com/MangoKrish
 
 ## How to play
 - **Move:** Arrow keys (←/→) or **A/D**
